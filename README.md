@@ -11,24 +11,22 @@ KimMuMan Todo-App
 		- 9/15 Ver 1.0.0 Update
 	- devleop
 	- feature
+		- 9/16 css update 
 	- release
 	- hotfix
 
 3. Next Update Plan
-	-  css update
-	- 
+	-  add TodoGame 
+	-  
+
 
  # Getting Started with Create React App
-
-  
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
   
 
 ## Available Scripts
-
-  
 
 In the project directory, you can run:
 

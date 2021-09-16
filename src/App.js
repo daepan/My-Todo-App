@@ -3,24 +3,21 @@ import React, { useState, useRef, useCallback } from 'react';
 import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert'
 import TodoList from './components/TodoList'
+import './App.css'
 
 const App = () => {
   const [todos, setTodos] = useState([
     {
       id: 1,
-      text: '공부',
-      checked: true,
+      text: 'TOEIC Study',
+      checked: false,
     },
     {
       id: 2,
-      text: '공부',
-      checked: true,
-    },
-    {
-      id: 3,
-      text: '공부',
+      text: '1일 1커밋',
       checked: false,
-    }
+    },
+
   ])
 
   const NextId = useRef(4);
@@ -54,11 +51,25 @@ const App = () => {
     }, [todos]
   )
 
+
+
+
+
   return (
-    <TodoTemplate>
-      <TodoInsert onInsert={onInsert} />
-      <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
-    </TodoTemplate>
+    <div className="backimg">
+
+      <TodoTemplate >
+
+        <TodoInsert onInsert={onInsert} />
+        <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
+
+      </TodoTemplate>
+
+
+
+    </div>
+
+
   )
 }
 
