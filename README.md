@@ -10,14 +10,16 @@ KimMuMan Todo-App
 	- master
 		- 9/15 Ver 1.0.0 Update
 	- devleop
+		- 9/17 add react-responsive
 	- feature
 		- 9/16 css update 
+		- 9/17 Component optimization
 	- release
 	- hotfix
 
 3. Next Update Plan
 	-  add TodoGame 
-	-  
+	
 
 
  # Getting Started with Create React App
