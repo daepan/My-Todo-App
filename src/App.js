@@ -5,6 +5,8 @@ import TodoInsert from './components/TodoInsert'
 import TodoList from './components/TodoList'
 import './App.css'
 
+
+
 const App = () => {
   const [todos, setTodos] = useState([
     {
@@ -29,26 +31,26 @@ const App = () => {
         text,
         checked: false,
       };
-      setTodos(todos.concat(todo));
+      setTodos(todos => todos.concat(todo));
       NextId.current += 1;
-    }, [todos],
+    }, [],
   )
 
   const onRemove = useCallback(
     id => {
-      setTodos(todos.filter(todo => todo.id !== id));
+      setTodos(todos => todos.filter(todo => todo.id !== id));
     },
-    [todos],
+    [],
   )
 
   const onToggle = useCallback(
     id => {
-      setTodos(
+      setTodos(todos =>
         todos.map(todo =>
           todo.id === id ? { ...todo, checked: !todo.checked } : todo,
         )
       )
-    }, [todos]
+    }, []
   )
 
 
