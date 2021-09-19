@@ -3,7 +3,10 @@ import React, { useReducer, useRef, useCallback } from 'react';
 import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert'
 import TodoList from './components/TodoList'
+import TodoHeader from './components/TodoHeader';
+import TodoFooter from './components/TodoFooter';
 import './App.css'
+
 
 
 
@@ -78,16 +81,12 @@ const App = () => {
 
   return (
     <div className="backimg">
-
+      <TodoHeader/>
       <TodoTemplate >
-
         <TodoInsert onInsert={onInsert} />
         <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
-
       </TodoTemplate>
-
-
-
+      <TodoFooter />
     </div>
 
 

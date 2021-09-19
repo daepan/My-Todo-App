@@ -2,12 +2,13 @@
     width: 1024px;
     margin-left:auto;
     margin-right: auto;
-    margin-top:auto;
-    border-radius: 10em;
+    margin-top:75px;
+    border-radius: 5em;
     overflow: hidden;
     position: center;
-    padding:40px;
-   
+    padding:50px auto;
+    min-width: calc(100vh-180px);
+    
     .app-title{
         background-color: gray;
         color:white;
