@@ -8,12 +8,12 @@
 
 .backimg:after{
     
-    top: 225px;
+    top: 200px;
     left:0;
     position:absolute;
     background-size:100%;
-    opacity:0.3!important;
-    filter:alpha(opacity=50);
+    opacity:0.7!important;
+    filter:alpha(opacity=10);
     z-index:-1;
     content:"";
     width:100%;
@@ -22,9 +22,9 @@
         to top,
         rgba(20, 20, 20, 0) 10%,
         rgba(20, 20, 20, 0.25) 25%,
-        rgba(20, 20, 20, 0.5) 50%,
-        rgba(20, 20, 20, 0.75) 95%,
-        rgba(20, 20, 20, 1) 100%
+        rgba(20, 20, 20, 0.4) 45%,
+        rgba(20, 20, 20, 0.75) 70%,
+        rgba(20, 20, 20, 1) 90%
       ),  url(./components/img/LostArkBackground.png);
     background-size: cover;
 
