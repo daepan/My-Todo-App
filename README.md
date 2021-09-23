@@ -24,6 +24,7 @@ KimMuMan Todo-App
 	- add Calender
 	- add Clock, TimeLine
 	- add more fontStyle
+	- add moblieMODE
 	
 
 
