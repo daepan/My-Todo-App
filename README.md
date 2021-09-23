@@ -15,6 +15,7 @@ KimMuMan Todo-App
 		- 9/16 css update 
 		- 9/17 Component optimization
 		- 9/19 add header, footer
+		- 9/20~22 add font
 	- release
 	- hotfix
 
@@ -22,7 +23,8 @@ KimMuMan Todo-App
 	- add TodoGame
 	- add Calender
 	- add Clock, TimeLine
-	- add fontStyle
+	- add more fontStyle
+	- add moblieMODE
 	
 
 

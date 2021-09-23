@@ -13,7 +13,7 @@ import './App.css'
 function createBulkTodos() {
   const array = [{
     id: 1,
-    text: 'TOEIC Study',
+    text: '유산소 운동',
     checked: false,
   },
   {
