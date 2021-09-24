@@ -4,6 +4,7 @@ import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert'
 import TodoList from './components/TodoList'
 import TodoHeader from './components/TodoHeader';
+import Clock from './components/Clock';
 import TodoFooter from './components/TodoFooter';
 import './App.css'
 
@@ -13,7 +14,7 @@ import './App.css'
 function createBulkTodos() {
   const array = [{
     id: 1,
-    text: 'TOEIC Study',
+    text: '유산소 운동',
     checked: false,
   },
   {
@@ -82,6 +83,7 @@ const App = () => {
   return (
     <div className="backimg">
       <TodoHeader/>
+      <Clock/>
       <TodoTemplate >
         <TodoInsert onInsert={onInsert} />
         <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />

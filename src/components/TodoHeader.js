@@ -1,8 +1,6 @@
 import React from 'react'
-import './css/TodoHeader.scss'
-
 import styled from 'styled-components'
-
+import './css/TodoHeader.scss'
 
 
 const Main = styled.div`
