@@ -16,13 +16,14 @@ KimMuMan Todo-App
 		- 9/17 Component optimization
 		- 9/19 add header, footer
 		- 9/20~22 add font
+		- 9/24 add Clock
 	- release
 	- hotfix
 
 3. Next Update Plan
 	- add TodoGame
 	- add Calender
-	- add Clock, TimeLine
+	- add TimeLine
 	- add more fontStyle
 	- add moblieMODE
 	
