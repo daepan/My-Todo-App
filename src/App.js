@@ -1,10 +1,12 @@
 
 import React, { useReducer, useRef, useCallback } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert'
 import TodoList from './components/TodoList'
 import TodoHeader from './components/TodoHeader';
 import Clock from './components/Clock';
+import TodoGame from './components/TodoGame'
 import TodoFooter from './components/TodoFooter';
 import './App.css'
 
@@ -82,8 +84,13 @@ const App = () => {
 
   return (
     <div className="backimg">
-      <TodoHeader/>
-      <Clock/>
+      <Router>
+        <TodoHeader />
+        <Switch>
+          <Route path="/Game" exact component={TodoGame} />
+        </Switch>
+      </Router>
+      <Clock />
       <TodoTemplate >
         <TodoInsert onInsert={onInsert} />
         <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />

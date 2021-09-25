@@ -1,4 +1,5 @@
 import React from 'react'
+import TodoNavbar from './TodoNavbar';
 import styled from 'styled-components'
 import './css/TodoHeader.scss'
 
@@ -9,17 +10,15 @@ const Main = styled.div`
     font-size:32px;
 `;
 
-const TodoHeader=()=>{
-    
-    return(
+const TodoHeader = () => {
+
+    return (
         <div className="TodoHeader">
             <div className="Header__Content">
                 <Main>
                     KIMMUMAN`s
                 </Main>
-                <nav>
-                Coming Soon
-                </nav>
+                <TodoNavbar />
             </div>
         </div>
     )
