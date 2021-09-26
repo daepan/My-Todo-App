@@ -1,12 +1,11 @@
 
 import React, { useReducer, useRef, useCallback } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert'
 import TodoList from './components/TodoList'
 import TodoHeader from './components/TodoHeader';
+import TodoNavbar from './components/TodoNavbar';
 import Clock from './components/Clock';
-import TodoGame from './components/TodoGame'
 import TodoFooter from './components/TodoFooter';
 import './App.css'
 
@@ -84,12 +83,8 @@ const App = () => {
 
   return (
     <div className="backimg">
-      <Router>
-        <TodoHeader />
-        <Switch>
-          <Route path="/Game" exact component={TodoGame} />
-        </Switch>
-      </Router>
+      <TodoHeader />
+      <TodoNavbar />
       <Clock />
       <TodoTemplate >
         <TodoInsert onInsert={onInsert} />
