@@ -1,18 +1,20 @@
-import React, { useState } from "react";
-import { Link } from 'react-router-dom';
-const TodoNavbar = () => {
-    const [open, setOpen] = useState(false);
-    return (
-        <nav className="TodoNavbar">
-            <ul className={open ? 'nav-links active' : 'nav-links'}>
-                <li className="nav-item">
-                    <Link to="/Game" className="nav-link" onClick={() => setOpen(false)}>
-                        TodoGame
-                    </Link>
-                </li>
+import React from "react";
+import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/TodoNavbar.scss';
 
-            </ul>
-        </nav>
+const TodoNavbar = () => {
+
+    return (
+        <Navbar bg="dark" variant="dark">
+            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Nav className="mr-auto">
+                <Nav.Link href="#home">Home</Nav.Link>
+                <Nav.Link href="#features">Features</Nav.Link>
+                <Nav.Link href="#pricing">Pricing</Nav.Link>
+            </Nav>
+
+        </Navbar>
     )
 }
 

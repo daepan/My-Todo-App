@@ -1,5 +1,4 @@
 import React from 'react'
-import TodoNavbar from './TodoNavbar';
 import styled from 'styled-components'
 import './css/TodoHeader.scss'
 
@@ -18,7 +17,6 @@ const TodoHeader = () => {
                 <Main>
                     KIMMUMAN`s
                 </Main>
-                <TodoNavbar />
             </div>
         </div>
     )

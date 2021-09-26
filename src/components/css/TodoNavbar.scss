@@ -1,17 +1,10 @@
-.nav-links{
-    display:grid;
-    grid-template-columns: repeat(1, auto);
-    grid-gap:20px;
-    list-style: none;
+.SerchButton{
+    display: flex;
+    justify-content: flex-end;
 }
-
-.nav-link {
-    text-decoration: none;
-    color:white;
-    transition: 0.3s all;
+.mr-sm-2{
+    display: flex;
+    justify-content: flex-end;
 }
 
 
-.nav-link:hover{
-    color:greenyellow;
-}
