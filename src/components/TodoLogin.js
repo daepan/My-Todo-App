@@ -1,4 +1,5 @@
 import React, { useRef, useCallback, useState } from "react";
+import produce from 'immer';
 
 const TodoLogin = () => {
     const nextId = useRef(1);
@@ -8,10 +9,11 @@ const TodoLogin = () => {
     const onChange = useCallback(
         e => {
             const { name, value } = e.target;
-            setForm({
-                ...form,
-                [name]: [value]
-            })
+            setForm(
+                produce(form, draft => {
+                    draft[name] = value;
+                })
+            )
         },
         [form]
     )
@@ -25,10 +27,11 @@ const TodoLogin = () => {
                 username: form.username
             };
 
-            setData({
-                ...data,
-                array: data.array.concat(info)
-            })
+            setData(
+                produce(data, draft => {
+                    draft.array.push(info)
+                })
+            )
 
             setForm({
                 name: '',
@@ -42,10 +45,11 @@ const TodoLogin = () => {
 
     const onRemove = useCallback(
         id => {
-            setData({
-                ...data,
-                array: data.array.filter(info => info.id !== id)
-            });
+            setData(
+                produce(data, draft => {
+                    draft.array.splice(draft.array.findIndex(info => info.id === id), 1);
+                }
+                );
         },
         [data]
     )
