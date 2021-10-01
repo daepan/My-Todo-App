@@ -13,6 +13,7 @@
     padding: 1rem;
     display: flex;
     align-items: center;
+    width: 90%;
     &:nth-child(even){
         background: white;
     }
@@ -40,6 +41,7 @@
     }
     .remove{
         display: flex;
+        justify-content: flex-end;
         align-items: center;
         font-size:1.5rem;
         color:#ff6b6b;
