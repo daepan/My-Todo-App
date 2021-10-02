@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Route } from 'react-router-dom'
+import { Route } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import TodoTemplate from './components/TodoTemplate';
 import TodoGame from './components/TodoGame';
 import TodoHeader from './components/TodoHeader';
@@ -12,7 +13,7 @@ import './App.css'
 
 const App = () => {
 
-
+  const isTabletorMobile = useMediaQuery({ minDeviceWidth: 1824 })
 
 
   return (
