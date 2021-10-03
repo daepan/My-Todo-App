@@ -1,12 +1,17 @@
 import React, { useCallback } from 'react';
 import { List } from 'react-virtualized';
 import TodoListItem from './TodoListItem';
+import useMediaQuery from 'react-responsive';
 import './css/TodoList.scss';
 
 const TodoList = ({ todos, onRemove, onToggle }) => {
 
+    const isPC = useMediaQuery({
+        query: "(min-width:768px)"
+    });
+
     const rowRenderer = useCallback(
-        ({ index, key, style }) => {
+        ({ index, key }) => {
             const todo = todos[index];
             return (
                 <TodoListItem
@@ -14,7 +19,7 @@ const TodoList = ({ todos, onRemove, onToggle }) => {
                     key={key}
                     onRemove={onRemove}
                     onToggle={onToggle}
-                    style={style}
+
                 />
             )
         },
@@ -24,13 +29,13 @@ const TodoList = ({ todos, onRemove, onToggle }) => {
     return (
         <List
             className="TodoList"
-            width={1024}
+            width={isPC ? 600 : 1024}
             height={56}
             rowCount={todos.length}
             rowHeight={56}
             rowRenderer={rowRenderer}
             list={todos}
-            style={{ outline: 'none' }}
+
         >
 
         </List>
