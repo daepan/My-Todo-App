@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import TodoTemplate from './components/TodoTemplate';
 import TodoGame from './components/TodoGame';
+import TodoCalender from './components/TodoCalender';
 import TodoHeader from './components/TodoHeader';
 import Clock from './components/Clock';
 import TodoFooter from './components/TodoFooter';
@@ -20,8 +21,9 @@ const App = () => {
     <div className="backimg">
       <TodoHeader />
       <Clock />
-      <Route path="/Temp" component={TodoTemplate}></Route>
-      <Route path="/Game" component={TodoGame}></Route>
+      <Route paht="/" component={TodoCalender}/>
+      <Route path="/Temp" component={TodoTemplate}/>
+      <Route path="/Game" component={TodoGame}/>
 
       <TodoFooter />
     </div>
