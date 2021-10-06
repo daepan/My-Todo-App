@@ -10,7 +10,7 @@ const TodoLogin = () => {
         e => {
             const { name, value } = e.target;
             setForm(
-                produce(form, draft => {
+                produce(draft => {
                     draft[name] = value;
                 })
             )
@@ -28,8 +28,9 @@ const TodoLogin = () => {
             };
 
             setData(
-                produce(data, draft => {
-                    draft.array.push(info)
+
+                produce(draft => {
+       draft.array.push(info)
                 })
             )
 
@@ -46,6 +47,41 @@ const TodoLogin = () => {
     const onRemove = useCallback(
         id => {
             setData(
+
+                produce(draft => {
+                    draft.array.splice(draft.array.findIndex(info => info.id === id), 1);
+                }
+                ),
+        };[data]
+    )
+
+return (
+    <div>
+        <form onSubmit={onSubmit}>
+            <input
+                name="username"
+                placeholder="아이디"
+                value={form.username}
+                onChange={onChange} />
+            <input
+                name="name"
+                placeholder="이름"
+                value={form.name}
+                onChange={onChange} />
+            <button type="submit">등록</button>
+        </form>
+        <div>
+            <ul>
+                {data.array.map(info => (
+                    <li
+                        key={info.id} onClick={() => onRemove(info.id)}>
+                        {info.username} ({info.name})
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </div>
+)
                 produce(data, draft => {
                     draft.array.splice(draft.array.findIndex(info => info.id === id), 1);
                 }
@@ -81,6 +117,7 @@ const TodoLogin = () => {
             </div>
         </div>
     )
+
 }
 
 export default TodoLogin;
