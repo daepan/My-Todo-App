@@ -13,12 +13,14 @@ import './App.css'
 
 const App = () => {
 
+  const isTabletorMobile = useMediaQuery({ minDeviceWidth: 1824 })
 
 
   return (
     <div className="backimg">
       <TodoHeader />
       <Clock />
+
       <Route paht="/" component={TodoCalender} />
       <Route path="/Temp" component={TodoTemplate} />
       <Route path="/Game" component={TodoGame} />
