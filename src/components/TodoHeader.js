@@ -1,6 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
-import './css/TodoHeader.scss'
+import React from 'react';
+import styled from 'styled-components';
+import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import './css/TodoHeader.scss';
+
 
 
 const Main = styled.div`
@@ -9,19 +12,24 @@ const Main = styled.div`
     font-size:32px;
 `;
 
-const TodoHeader=()=>{
-    
-    return(
+
+
+const TodoHeader = () => {
+
+    return (
         <div className="TodoHeader">
-            <div className="Header__Content">
+            <Navbar className="Header__Content">
+
                 <Main>
                     KIMMUMAN`s
                 </Main>
-                <nav>
-                Coming Soon
-                </nav>
-            </div>
-        </div>
+                <Nav className="me-auto">
+                    <Link to="/Temp" className="TodoTempLink">TodoTemp</Link >
+                    <Link to="/Game" className="TodoGameLink">TodoGame</Link >
+                </Nav>
+
+            </Navbar>
+        </div >
     )
 }
 

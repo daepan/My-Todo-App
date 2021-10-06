@@ -17,6 +17,7 @@ KimMuMan Todo-App
 		- 9/19 add header, footer
 		- 9/20~22 add font
 		- 9/24 add Clock
+		- 9/27~ add loginOption
 	- release
 	- hotfix
 
