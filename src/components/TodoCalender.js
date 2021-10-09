@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 
 
-
 const TodoCalenderContainer = styled.div`
 
 `;
@@ -16,38 +15,56 @@ const TodoCalenderHeader = styled.div`
 const TodoCalenderTimeContainer = styled.div`
     display: flex;
     justify-content:space-between;
+
 `;
 const TodoCalenderTime = styled.div`
     font-size:52px;
 `;
 
 
+
 const TodoCalenderDate = styled.span`
-    border:1px solid white;
+    border:1px solid white
+   `;
+
+const TodoCalenderTimeContainer = styled.div`
+    
 `;
+
+const TodoCalenderTime = styled.div`
+    
+
+`;
+
+
 
 
 const TodoCalenderMonth = styled.div`
     display: flex;
     font-size: 40px;
-    
 `;
 
 
 const TodoCalender = () => {
     const [date] = useState(new Date());
 
+
+
+
+
+const TodoCalender = () =>{
+
+    const [date] = useState(new Date());
     const TodoCalenderDateFunction = () => {
         const result = [];
         const weekArr = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
-        for (let i = 0; i < weekArr.length; i++) {
+          for (let i = 0; i < weekArr.length; i++) {
             result.push(<TodoCalenderDate key={i}>{weekArr[i]}</TodoCalenderDate>)
         }
         return result;
     }
 
-
-
+   
     return (
         <TodoCalenderContainer >
             <TodoCalenderHeader>
@@ -69,6 +86,7 @@ const TodoCalender = () => {
                 <div>
                     {TodoCalenderDateFunction()}
                 </div>
+
             </TodoCalenderHeader>
         </TodoCalenderContainer>
     );

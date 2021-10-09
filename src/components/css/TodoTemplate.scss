@@ -8,6 +8,7 @@
     position: center;
     padding:50px auto;
     min-width: calc(100vh-180px);
+    background-color: white;
     
     .app-title{
         background-color: gray;
@@ -21,6 +22,6 @@
         
     }
     .content{
-        background-color: white;
+        background-color: gray;
     }
 }
