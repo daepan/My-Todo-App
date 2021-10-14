@@ -8,22 +8,30 @@ import TodoHeader from './components/TodoHeader';
 import Clock from './components/Clock';
 import TodoFooter from './components/TodoFooter';
 import './App.css'
+import HistorySample from './components/HistorySample';
+import axios from './'
 
 
 
 const App = () => {
-
-  const isTabletorMobile = useMediaQuery({ minDeviceWidth: 1824 })
-
-
+  const [data, setData] = useState(null);
+  const onClick = () => {
+    axios.get('http://jsonplaceholder.typicode.com/todos/1').then(response => {
+      setData(response.data);
+    })
+  }
   return (
     <div className="backimg">
       <TodoHeader />
       <Clock />
-
+      <span>
+        <button onClick={onClick}>불러오기</button>
+        <div>{data && <textarea rows={7} value={JSON.stringify(data, null, 2)} readOnly={true} />}</div>
+      </span>
       <Route paht="/" component={TodoCalender} />
       <Route path="/Temp" component={TodoTemplate} />
       <Route path="/Game" component={TodoGame} />
+      <Route path="/History" component={HistorySample} />
       <TodoFooter />
     </div>
 
