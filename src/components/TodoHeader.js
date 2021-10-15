@@ -26,6 +26,7 @@ const TodoHeader = () => {
                 <Nav className="me-auto">
                     <Link to="/Temp" className="TodoTempLink">TodoTemp</Link >
                     <Link to="/Game" className="TodoGameLink">TodoGame</Link >
+                    <Link to="/News" className="NewsLink">News</Link >
                 </Nav>
 
             </Navbar>
