@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import NewsItem from './NewsItem';
+import Categories from './Categories';
 import axios from 'axios';
 
 const NewsListBlock = styled.div`
+    
+    aligin-item:center;
     box-sizing:border-box;
     padding-bottom:3rem;
     width:768px;
     margin: 0 auto;
-    margin: 2rem;
+    margin-top: 2rem;
+    color:white;
     @media scrren and(max-width: 768px){
         width:100%;
         padding-left:1rem;
@@ -42,11 +46,14 @@ const NewsList = () => {
     }
 
     return (
-        <NewsListBlock>
-            {articles.map((article) => (
-                <NewsItem key={article.url} article={article} />
-            ))}
-        </NewsListBlock>
+        <div>
+            <Categories />
+            <NewsListBlock>
+                {articles.map((article) => (
+                    <NewsItem key={article.url} article={article} />
+                ))}
+            </NewsListBlock>
+        </div>
     );
 };
 

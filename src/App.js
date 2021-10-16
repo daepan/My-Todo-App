@@ -29,16 +29,19 @@ const App = () => {
   return (
     <div className="backimg">
       <TodoHeader />
-      <Clock />
+
       <span>
         <button onClick={onClick}>불러오기</button>
         <div>{data && <textarea rows={7} value={JSON.stringify(data, null, 2)} />}</div>
       </span>
-      <Route paht="/" component={TodoCalender} />
+      <Route exact path="/" component={Clock} />
+      <Route path="/Calender" component={TodoCalender} />
       <Route path="/Temp" component={TodoTemplate} />
       <Route path="/Game" component={TodoGame} />
       <Route path="/News" component={NewsList} />
       <Route path="/History" component={HistorySample} />
+
+
       <TodoFooter />
     </div>
 
