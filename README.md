@@ -18,6 +18,7 @@ KimMuMan Todo-App
 		- 9/20~22 add font
 		- 9/24 add Clock
 		- 9/27~ add loginOption
+		- 10/15~ add NewsPage
 	- release
 	- hotfix
 

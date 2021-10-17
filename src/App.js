@@ -8,9 +8,8 @@ import TodoHeader from './components/TodoHeader';
 import Clock from './components/Clock';
 import TodoFooter from './components/TodoFooter';
 import './App.css'
-import HistorySample from './components/HistorySample';
 import axios from 'axios'
-import NewsList from './components/NewsList';
+import NewsMain from './components/NewsMain';
 
 
 
@@ -38,8 +37,8 @@ const App = () => {
       <Route path="/Calender" component={TodoCalender} />
       <Route path="/Temp" component={TodoTemplate} />
       <Route path="/Game" component={TodoGame} />
-      <Route path="/News" component={NewsList} />
-      <Route path="/History" component={HistorySample} />
+      <Route path="/:category?" component={NewsMain} />
+     
 
 
       <TodoFooter />

@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 import { Button } from 'react-bootstrap';
-import react,{useState} from 'react';
-import styled from 'styled-components'
 
 
 const TodoCalenderContainer = styled.div`
@@ -21,13 +19,6 @@ const TodoCalenderTime = styled.div`
     font-size:52px;
 `;
 
-const TodoCalenderTimeContainer = styled.div`
-    
-`;
-const TodoCalenderTime = styled.div`
-    
-
-`;
 
 
 const TodoCalenderDate = styled.div`
@@ -68,7 +59,6 @@ const TodoCalender = () =>{
                 <TodoCalenderDate>
                 </TodoCalenderDate>
                     <TodoCalenderMonth></TodoCalenderMonth>
-                </TodoCalenderTimeContainer>
                 <TodoCalenderDate></TodoCalenderDate>
             </TodoCalenderHeader>
         </TodoCalenderContainer>
