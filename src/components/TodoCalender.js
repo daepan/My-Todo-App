@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
 
+import { Button } from 'react-bootstrap';
+
 
 const TodoCalenderContainer = styled.div`
 
@@ -21,20 +23,6 @@ const TodoCalenderTime = styled.div`
     font-size:52px;
 `;
 
-
-
-const TodoCalenderDate = styled.span`
-    border:1px solid white
-   `;
-
-const TodoCalenderTimeContainer = styled.div`
-    
-`;
-
-const TodoCalenderTime = styled.div`
-    
-
-`;
 
 
 
@@ -86,7 +74,6 @@ const TodoCalender = () =>{
                 <div>
                     {TodoCalenderDateFunction()}
                 </div>
-
             </TodoCalenderHeader>
         </TodoCalenderContainer>
     );
