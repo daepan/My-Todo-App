@@ -22,7 +22,7 @@
     justify-content: flex-start;
 }
 
-.me-auto{
+.content{
     padding-left:30px;
     display: flex;
     font-family: 'Gluten-Bold';
@@ -31,6 +31,11 @@
 
 .TodoGameLink{
     padding-left:10px;
+    padding-right: 10px;
+}
+
+.TodoCalender{
+    padding-left: 10px;
 }
 
 @font-face {

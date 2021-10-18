@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './css/TodoHeader.scss';
 
@@ -21,12 +21,14 @@ const TodoHeader = () => {
             <Navbar className="Header__Content">
 
                 <Main>
-                    KIMMUMAN`s
+                    <Link to="/" className="TodoHome">KIMMUMAN`s</Link>
                 </Main>
-                <Nav className="me-auto">
+                <div className="content">
                     <Link to="/Temp" className="TodoTempLink">TodoTemp</Link >
                     <Link to="/Game" className="TodoGameLink">TodoGame</Link >
-                </Nav>
+                    <Link to="/News" className="NewsLink">News</Link >
+                    <Link to="/Calender" className="TodoCalender">Calender</Link >
+                </div>
 
             </Navbar>
         </div >
