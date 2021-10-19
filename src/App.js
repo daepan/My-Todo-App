@@ -8,8 +8,10 @@ import TodoHeader from './components/TodoHeader';
 import Clock from './components/Clock';
 import TodoFooter from './components/TodoFooter';
 import './App.css'
+import HistorySample from './components/HistorySample';
 import axios from 'axios'
-import NewsMain from './components/NewsMain';
+import NewsList from './components/NewsList';
+import ColorContext from './context/color';
 
 
 
@@ -37,9 +39,15 @@ const App = () => {
       <Route path="/Calender" component={TodoCalender} />
       <Route path="/Temp" component={TodoTemplate} />
       <Route path="/Game" component={TodoGame} />
-      <Route path="/:category?" component={NewsMain} />
-     
-
+      <Route path="/News" component={NewsList} />
+      <Route path="/History" component={HistorySample} />
+      <Route path="/Color">
+        <ColorContext.Provider value={{ color: 'red' }}>
+          <div>
+            <ColorBox />
+          </div>
+        </ColorContext.Provider>
+      </Route>
 
       <TodoFooter />
     </div>
