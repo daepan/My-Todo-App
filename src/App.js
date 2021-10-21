@@ -12,6 +12,7 @@ import HistorySample from './components/HistorySample';
 import axios from 'axios'
 import NewsList from './components/NewsList';
 import ColorContext from './context/color';
+import { ColorProvider } from './context/color';
 
 
 
@@ -42,13 +43,12 @@ const App = () => {
       <Route path="/News" component={NewsList} />
       <Route path="/History" component={HistorySample} />
       <Route path="/Color">
-        <ColorContext.Provider value={{ color: 'red' }}>
+        <ColorProvider value={{ color: 'red' }}>
           <div>
             <ColorBox />
           </div>
-        </ColorContext.Provider>
+        </ColorProvider>
       </Route>
-
       <TodoFooter />
     </div>
 
