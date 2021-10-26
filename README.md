@@ -20,6 +20,7 @@ KimMuMan Todo-App
 		- 9/27~ add loginOption
 		- 10/15~10/18 add NewsPage
 		- 10/21~10/24 add contextAPI
+		- 10/26~ add redux
 		- 10/4~ add Calender(Now stoped)
 	- release
 	- hotfix
