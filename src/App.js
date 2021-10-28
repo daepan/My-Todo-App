@@ -11,7 +11,7 @@ import './App.css'
 import HistorySample from './components/HistorySample';
 import axios from 'axios'
 import NewsList from './components/NewsList';
-import SelectColors from './components/SelectColor';
+import ColorContext from './context/color';
 import { ColorProvider } from './context/color';
 
 
@@ -45,7 +45,6 @@ const App = () => {
       <Route path="/Color">
         <ColorProvider value={{ color: 'red' }}>
           <div>
-            <SelectColors/>
             <ColorBox />
           </div>
         </ColorProvider>
