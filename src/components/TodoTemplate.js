@@ -39,8 +39,6 @@ function todoReducer(todos, action) {
 
 
 
-
-
 const TodoTemplate = ({ children }) => {
     const [todos, dispatch] = useReducer(todoReducer, undefined, createBulkTodos)
 
