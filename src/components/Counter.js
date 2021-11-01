@@ -1,14 +1,14 @@
 import React from 'react';
-import counter, { increase, decrease } from '../modules/counter';
 
 
-const Counter = ({ number }) => {
+
+const Counter = ({ onIncrease, onDecrease, number }) => {
     return (
         <div>
             <h1>{number}</h1>
             <div>
-                <button onClick={increase}>+1</button>
-                <button onClick={decrease}>-1</button>
+                <button onClick={onIncrease}>+1</button>
+                <button onClick={onDecrease}>-1</button>
             </div>
         </div>
     )
