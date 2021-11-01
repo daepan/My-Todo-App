@@ -13,6 +13,7 @@ import axios from 'axios'
 import NewsList from './components/NewsList';
 import ColorContext from './context/color';
 import { ColorProvider } from './context/color';
+import Counter from './components/Counter';
 
 
 
@@ -49,6 +50,7 @@ const App = () => {
           </div>
         </ColorProvider>
       </Route>
+      <Route path="/Counter" component={Counter} />
       <TodoFooter />
     </div>
 
