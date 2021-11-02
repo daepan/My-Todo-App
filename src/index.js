@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { createStore } from 'reudx';
+import { createStore, applyMiddleware } from 'reudx';
 import './index.css';
 import App from './App';
 import rootReducer from './modules/index';
 import reportWebVitals from './reportWebVitals';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'redux-react';
+import loggerMiddleware from './components/lib/loggerMiddleware';
 
-const store = createStore(rootReducer, composeWithDevTools());
+const store = createStore(rootReducer, applyMiddleware(loggerMiddleware));
 
 ReactDOM.render(
   <BrowserRouter>
