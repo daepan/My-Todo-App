@@ -1,4 +1,4 @@
-import { createAction, handleAction } from 'redux-actions';
+import { createAction, handleActions } from 'redux-actions';
 
 
 const INCREASE = 'counter/INCREASE';
@@ -7,15 +7,25 @@ const DECREASE = 'counter/DECREASE';
 export const increase = createAction(INCREASE);
 export const decrease = createAction(DECREASE);
 
+//1초 뒤에 increase 혹은 dexrease 함수를 디스패치함
+export const increaseAsync = () => disppatch => {
+    setTimeout(() => {
+        disppatch(increase())
+    }, 1000)
+}
 
-const intialState = {
-    number: 0
-};
+export const decreaseAsync = () => disppatch => {
+    setTimeout(() => {
+        disppatch(decrease())
+    }, 1000)
+}
 
-const counter = handleAction(
+const intialState = 0;
+
+const counter = handleActions(
     {
-        [INCREASE]: (state, action) => ({ number: state.number + 1 }),
-        [DECREASE]: (state, action) => ({ number: state.number - 1 }),
+        [INCREASE]: state => state + 1,
+        [DECREASE]: state => state - 1,
     },
     intialState
 )
