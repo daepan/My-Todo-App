@@ -17,10 +17,10 @@ KimMuMan Todo-App
 		- 9/19 add header, footer
 		- 9/20~22 add font
 		- 9/24 add Clock
-		- 9/27~ add loginOption
+		- 9/27~ add loginOption(Now stoped)
 		- 10/15~10/18 add NewsPage
 		- 10/21~10/24 add contextAPI
-		- 10/26~ add redux
+		- 10/26~ add redux(-thunk,-saga)
 		- 10/4~ add Calender(Now stoped)
 	- release
 	- hotfix
