@@ -11,7 +11,7 @@ import './App.css'
 import HistorySample from './components/HistorySample';
 import axios from 'axios'
 import NewsList from './components/NewsList';
-import ColorContext from './context/color';
+
 import { ColorProvider } from './context/color';
 import Counter from './components/Counter';
 
@@ -29,14 +29,14 @@ const App = () => {
       console.log(e);
     }
   };
+  const onNotify = () => {
+    import('./notify').then(result => result.default());//import를 함수로 사용하면 Promise를 반환
+  }
   return (
     <div className="backimg">
       <TodoHeader />
 
-      <span>
-        <button onClick={onClick}>불러오기</button>
-        <div>{data && <textarea rows={7} value={JSON.stringify(data, null, 2)} />}</div>
-      </span>
+      <p onClick={onNotify}> Hello </p>
       <Route exact path="/" component={Clock} />
       <Route path="/Calender" component={TodoCalender} />
       <Route path="/Temp" component={TodoTemplate} />
