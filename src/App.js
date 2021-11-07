@@ -9,34 +9,36 @@ import Clock from './components/Clock';
 import TodoFooter from './components/TodoFooter';
 import './App.css'
 import HistorySample from './components/HistorySample';
-import axios from 'axios'
 import NewsList from './components/NewsList';
-
 import { ColorProvider } from './context/color';
 import Counter from './components/Counter';
+import SplitMe from './SplitMe';
 
 
 
 const App = () => {
   const [data, setData] = useState(null);
-  const onClick = async () => {
-    try {
-      const response = await axios.get(
-        'https://newsapi.org/v2/top-headlines?country=kr&apiKey=3ed3d506daf245dbaa6ccd075e27b47e'
-      );
-      setData(response.data)
-    } catch (e) {
-      console.log(e);
-    }
-  };
+
   const onNotify = () => {
     import('./notify').then(result => result.default());//import를 함수로 사용하면 Promise를 반환
+  }
+
+  state = {
+    SplitMe: null
+  };
+  handleClick = async () => {
+    const loadedModule = await import('./SplitMe');
+    this.setState({
+      SplitMe: loadedModule.default
+    })
   }
   return (
     <div className="backimg">
       <TodoHeader />
-
-      <p onClick={onNotify}> Hello </p>
+      <div>
+        <p onClick={this.handleClick}> Hello </p>
+        {SplitMe && <SplitMe />}
+      </div>
       <Route exact path="/" component={Clock} />
       <Route path="/Calender" component={TodoCalender} />
       <Route path="/Temp" component={TodoTemplate} />
