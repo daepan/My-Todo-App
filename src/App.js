@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { Route } from 'react-router-dom';
 import TodoTemplate from './components/TodoTemplate';
 import TodoGame from './components/TodoGame';
@@ -12,32 +12,36 @@ import HistorySample from './components/HistorySample';
 import NewsList from './components/NewsList';
 import { ColorProvider } from './context/color';
 import Counter from './components/Counter';
-import SplitMe from './SplitMe';
+
+const SplitMe = React.lazy(() => import('./SplitMe'));
 
 
 
 const App = () => {
-  const [data, setData] = useState(null);
 
-  const onNotify = () => {
-    import('./notify').then(result => result.default());//import를 함수로 사용하면 Promise를 반환
+  const [visible, setVisible] = useState(false);
+  const onClick = () => {
+    setVisible(true);
   }
-
   state = {
     SplitMe: null
   };
+
   handleClick = async () => {
     const loadedModule = await import('./SplitMe');
     this.setState({
       SplitMe: loadedModule.default
     })
   }
+
   return (
     <div className="backimg">
       <TodoHeader />
       <div>
-        <p onClick={this.handleClick}> Hello </p>
-        {SplitMe && <SplitMe />}
+        <p onClick={onClick}> Hello </p>
+        <Suspense fallback={<div>loading...</div>}>
+          {visible && <SplitMe />}
+        </Suspense>
       </div>
       <Route exact path="/" component={Clock} />
       <Route path="/Calender" component={TodoCalender} />
