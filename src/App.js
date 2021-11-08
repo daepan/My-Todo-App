@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { Route } from 'react-router-dom';
 import TodoTemplate from './components/TodoTemplate';
 import TodoGame from './components/TodoGame';
@@ -9,33 +9,41 @@ import Clock from './components/Clock';
 import TodoFooter from './components/TodoFooter';
 import './App.css'
 import HistorySample from './components/HistorySample';
-import axios from 'axios'
 import NewsList from './components/NewsList';
-import ColorContext from './context/color';
 import { ColorProvider } from './context/color';
+import Counter from './components/Counter';
+import loadable from '@loadable/component';
 
-
+const SplitMe = loadable(() => import('./SplitMe'), {
+  fallback: <div>loading...</div>
+});
 
 const App = () => {
-  const [data, setData] = useState(null);
-  const onClick = async () => {
-    try {
-      const response = await axios.get(
-        'https://newsapi.org/v2/top-headlines?country=kr&apiKey=3ed3d506daf245dbaa6ccd075e27b47e'
-      );
-      setData(response.data)
-    } catch (e) {
-      console.log(e);
-    }
+
+  const [visible, setVisible] = useState(false);
+  const onClick = () => {
+    setVisible(true);
+  }
+  state = {
+    SplitMe: null
   };
+
+  handleClick = async () => {
+    const loadedModule = await import('./SplitMe');
+    this.setState({
+      SplitMe: loadedModule.default
+    })
+  }
+
   return (
     <div className="backimg">
       <TodoHeader />
+      <div>
+        <p onClick={onClick} onMouseOver={onMouseOver}> Hello </p>
 
-      <span>
-        <button onClick={onClick}>불러오기</button>
-        <div>{data && <textarea rows={7} value={JSON.stringify(data, null, 2)} />}</div>
-      </span>
+        {visible && <SplitMe />}
+
+      </div>
       <Route exact path="/" component={Clock} />
       <Route path="/Calender" component={TodoCalender} />
       <Route path="/Temp" component={TodoTemplate} />
@@ -49,10 +57,9 @@ const App = () => {
           </div>
         </ColorProvider>
       </Route>
+      <Route path="/Counter" component={Counter} />
       <TodoFooter />
     </div>
-
-
   )
 }
 

@@ -1,13 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { createStore, applyMiddleware } from 'reudx';
 import './index.css';
 import App from './App';
+import rootReducer from './modules/index';
 import reportWebVitals from './reportWebVitals';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { Provider } from 'redux-react';
+import loggerMiddleware from './components/lib/loggerMiddleware';
+import { createLogger } from 'redux-logger';
+import ReduxThunk from 'redux-thunk';
+
+const logger = createLogger();
+const store = createStore(rootReducer, applyMiddleware(logger, ReduxThunk));
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </BrowserRouter>,
   document.getElementById('root')
 );
