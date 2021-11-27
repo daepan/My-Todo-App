@@ -4,10 +4,12 @@ KimMuMan Todo-App
 1.  My todo App update
 
 	- 9/15 get Started prototype Todo-App
+	- 11/7 Option set
+	- 11/8~ Personal Dev training
 
 2. Git Branch
 
-	- master
+	- main
 		- 9/15 Ver 1.0.0 Update
 	- devleop
 		- 9/17 add react-responsive
@@ -24,7 +26,7 @@ KimMuMan Todo-App
 		- 10/4~ add Calender(Now stoped)
 	- release
 	- hotfix
-
+  
 3. Next Update Plan
 	- add TodoGame
 	- add TimeLine

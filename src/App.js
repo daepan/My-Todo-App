@@ -12,12 +12,11 @@ import HistorySample from './components/HistorySample';
 import NewsList from './components/NewsList';
 import { ColorProvider } from './context/color';
 import Counter from './components/Counter';
-import loadable from '@loadable/component'
+
+
 const SplitMe = loadable(() => import('./SplitMe'), {
   fallback: <div>loading...</div>
 });
-
-
 
 const App = () => {
 
@@ -41,9 +40,7 @@ const App = () => {
       <TodoHeader />
       <div>
         <p onClick={onClick} onMouseOver={onMouseOver}> Hello </p>
-
         {visible && <SplitMe />}
-
       </div>
       <Route exact path="/" component={Clock} />
       <Route path="/Calender" component={TodoCalender} />
@@ -61,8 +58,6 @@ const App = () => {
       <Route path="/Counter" component={Counter} />
       <TodoFooter />
     </div>
-
-
   )
 }
 
